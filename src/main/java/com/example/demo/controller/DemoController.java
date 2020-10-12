@@ -3,17 +3,16 @@ package com.example.demo.controller;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.util.DateUtils;
 
-@RestController
+//@RestController
 public class DemoController {
 
 	DateUtils dateUtis;
 	private SayService sayService;
 
-	DemoController(DateUtils dateUtis, @Qualifier("dog_rock") SayService sayService) {
+	DemoController(DateUtils dateUtis, @Qualifier("cat_rock") SayService sayService) {
 		this.dateUtis = dateUtis;
 		this.sayService = sayService;
 	}
@@ -46,6 +45,6 @@ class Cat implements SayService {
 class Dog implements SayService {
 	@Override
 	public String say() {
-		return "booo";
+		return "boooww";
 	}
 }
